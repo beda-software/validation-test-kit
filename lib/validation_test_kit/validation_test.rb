@@ -16,20 +16,8 @@ module ValidationTestKit
     )
 
     class << self
-      def ig
-        @ig ||= config.options[:ig]
-      end
-
       def ig_version
         @ig_version ||= config.options[:ig_version]
-      end
-
-      def validator_url
-        @validator_url ||= config.options[:validator_url]
-      end
-
-      def tx_server_url
-        @tx_server_url ||= config.options[:tx_server_url]
       end
     end
 
@@ -61,16 +49,6 @@ module ValidationTestKit
       errors_found = messages.any? { |message| message[:type] == 'error' }
 
       assert !errors_found, "Resource does not conform to the profile #{profile_with_version}"
-    end
-
-    fhir_resource_validator do
-      igs "hl7.fhir.au.core#0.4.0-preview"
-      url 'https://validator.fhir.org'
-
-      cli_context do
-        txServer 'https://tx.dev.hl7.org.au/fhir'
-        disableDefaultResourceFetcher false
-      end
     end
 
     run do
