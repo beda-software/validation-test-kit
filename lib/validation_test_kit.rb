@@ -11,8 +11,10 @@ module ValidationTestKit
     group do
       title 'Validation of any FHIR resource'
       test from: :validation_test,
-           options: {
-             ig_version: '0.4.1-preview'
+           config: {
+             options: {
+               ig_version: '0.4.1-preview'
+             }
            }
     end
   end

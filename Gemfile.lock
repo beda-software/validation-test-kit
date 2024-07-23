@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    validation_test_kit (0.2.2)
+    validation_test_kit (0.0.1)
       inferno_core (>= 0.4.2)
 
 GEM
@@ -289,7 +289,7 @@ DEPENDENCIES
   debug
   factory_bot (~> 6.1)
   rspec (~> 3.10)
-  tls_test_kit!
+  validation_test_kit!
   webmock (~> 3.11)
 
 BUNDLED WITH
